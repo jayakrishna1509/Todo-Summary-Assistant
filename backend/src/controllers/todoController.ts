@@ -105,3 +105,35 @@ export const summarizeTodos = async (
     res.status(500).json({ message: "Failed to generate summary" });
   }
 };
+
+export const updateTodo = async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const { text, completed } = req.body;
+
+  try {
+    const { data, error } = await supabase
+      .from("todos")
+      .update({
+        text,
+        completed,
+        updated_at: new Date().toISOString(),
+      })
+      .eq("id", id)
+      .select()
+      .single();
+
+    if (error) {
+      console.error("Update error:", error);
+      return res.status(500).json({ message: "Failed to update todo" });
+    }
+
+    if (!data) {
+      return res.status(404).json({ message: "Todo not found" });
+    }
+
+    res.json(data);
+  } catch (error) {
+    console.error("Controller error:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+};

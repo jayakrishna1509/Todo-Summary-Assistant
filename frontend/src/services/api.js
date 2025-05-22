@@ -1,7 +1,7 @@
-const BASE_URL = "/api";
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
 export const getTodos = async () => {
-  const response = await fetch(`${BASE_URL}/todos`);
+  const response = await fetch(`${API_BASE_URL}/todos`);
   if (!response.ok) {
     throw new Error("Failed to fetch todos");
   }
@@ -9,7 +9,7 @@ export const getTodos = async () => {
 };
 
 export const createTodo = async (text) => {
-  const response = await fetch(`${BASE_URL}/todos`, {
+  const response = await fetch(`${API_BASE_URL}/todos`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -23,7 +23,7 @@ export const createTodo = async (text) => {
 };
 
 export const updateTodo = async (id, todo) => {
-  const response = await fetch(`${BASE_URL}/todos/${id}`, {
+  const response = await fetch(`${API_BASE_URL}/todos/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -37,7 +37,7 @@ export const updateTodo = async (id, todo) => {
 };
 
 export const deleteTodo = async (id) => {
-  const response = await fetch(`${BASE_URL}/todos/${id}`, {
+  const response = await fetch(`${API_BASE_URL}/todos/${id}`, {
     method: "DELETE",
   });
   if (!response.ok) {
@@ -47,7 +47,7 @@ export const deleteTodo = async (id) => {
 };
 
 export const generateSummary = async (todos) => {
-  const response = await fetch(`${BASE_URL}/summary`, {
+  const response = await fetch(`${API_BASE_URL}/summary`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

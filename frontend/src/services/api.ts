@@ -56,3 +56,20 @@ export const generateSummary = async (): Promise<{ message: string }> => {
   }
   return data;
 };
+
+export const updateTodo = async (id: string, updates: Partial<Todo>): Promise<Todo> => {
+  const response = await fetch(`${API_BASE_URL}/todos/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(updates),
+  });
+
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.message || 'Failed to update todo');
+  }
+
+  return response.json();
+};
