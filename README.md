@@ -151,7 +151,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Slack for integration capabilities
 - OpenAI for LLM capabilities
 
-## Contact 📧
+## 👨‍💻 Author
 
-Your Name - [@yourusername](https://twitter.com/yourusername)
-Project Link: [https://github.com/yourusername/todo-summary-assistant](https://github.com/yourusername/todo-summary-assistant)
+**Pillagolla Jayakrishna**  
+📎 [GitHub](https://github.com/jayakrishna1509)
+
+---
+
+## 🌟 License
+
+This project is for educational/demo purposes. Feel free to fork and build on it.
