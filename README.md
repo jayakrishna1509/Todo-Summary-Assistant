@@ -4,7 +4,7 @@ A modern todo application that helps manage tasks and generates summaries direct
 
 ## Features ✨
 
-- Create, read, update, and delete todos
+- Create, read, edit, and delete todos
 - Mark todos as complete/incomplete
 - Filter todos by status (All, Pending, Completed)
 - Dark/Light mode support
@@ -125,7 +125,7 @@ The application will be available at `http://localhost:5173`
 
 - `GET /api/todos` - Get all todos
 - `POST /api/todos` - Create a new todo
-- `PUT /api/todos/:id` - Update a todo
+- `PUT /api/todos/:id` - Edit a todo
 - `DELETE /api/todos/:id` - Delete a todo
 
 ### Summary
